@@ -1,7 +1,7 @@
 # Visualizing-3D-motion-of-imu
 
 
-[Project Video](https://drive.google.com/file/d/1Bs3iMq1NH06NUPIHAe1c0rc94L0OgWDq/view?usp=sharing)
+[PROJECT VIDEO](https://drive.google.com/file/d/1Bs3iMq1NH06NUPIHAe1c0rc94L0OgWDq/view?usp=sharing)
 
 The precise tracking of human operators in robotic workplaces is an important requirement  to be satisfied in order to develop human-robot interaction tasks more smoothly. Inertial Measurement Unit (IMU) is one of the technologies capable of estimating orientation of rigid body. IMU uses information from 3 sensors viz., gyroscope,accelerometer and magnetometer to calculate orientation.
 In this project we integrate  IMU sensor with arduino to obtain sensor reading,which are then fed to processing IDE for visualizing motion of IMU.
@@ -51,12 +51,16 @@ The MPU-9250 combines a 3-axis accelerometer, a 3-axis gyroscope and a 3-axis ma
 
 ### WORKING
 <img height="300" width="500" src="3D_MOTION_9250IMU/MPU-9250-Accel-Gyro-and-Mag-Module-Axis-Orientation.jpg">
+
 #### Measuring Acceleration:
 It measures acceleration using its on-chip accelerometer with four programmable full scale ranges of ±2g, ±4g, ±8g and ±16g that can be set by the user.The X, Y and Z are relative to how the chip sits on the module as shown to the right and will ultimately be dependent on the orientation of the module in your project.
+
 #### Measuring Rotation:
 It measures rotation using its on-chip gyroscope with four programmable full scale ranges of ±250°/s, ±500°/s, ±1000°/s and ±2000°/s that can be set by the user. The axis of rotation are relative the the X,Y and Z shown to the right.
+
 #### Measuring Compass Direction:
 The MPU-9250 chip includes the AK8963 magnetometer  that can measure compass direction that allows the device to know its orientation relative to the magnetic north similar to how a hand-held compass works.The axis are X,  Y and Z are the same as shown to the right for the accel and gyro except that the Z-axis is reversed. So +Z is in the direction going down toward earth.
+
 #### Using the I2C Interface:
 The module uses I2C interface for communications with MCU.It supports two different I2C addresses;0x68 and 0x69.That allows two devices to be used on the same bus or in case there is an address conflict with another device on the bus.
 The AD0 pin determines the I2C address to use.This pin has built in 4.7k pull-down resistor on module.if the pin is left unconnected,the line will be pulled low and the default I2C address will be 0X68.To select 0x69, connect the ADO pin to 3.3V.
@@ -66,7 +70,9 @@ The Auxiliary I2C address with pins labeled EDA and ECL are an I2C bus controlle
 
 ### Roll, Pitch and Yaw
 Flight dynamics is the science of air vehicle orientation and control in three dimensions. The three critical flight dynamics parameters are the angles of rotation in three dimensions about the vehicle's center of gravity (cg), known as pitch, roll and yaw.                                                                                                                       Roll, pitch and yaw refer to rotations about the respective axes starting from a defined steady flight equilibrium state.
+
 <img height="300" width="500" src="3D_MOTION_9250IMU/488px-Yaw_Axis_Corrected.svg.png">
+
 #### FORMULAE OF ROLL, PITCH & YAW:
 1.Accelerometer measures and tells the amount of force (acceleration) it is experiencing in X, Y and Z direction. Based on the orientation of IMU, it will experience different amounts of acceleration along the three axes. These acceleration values can give us roll ,pitch values using below formula:
 
@@ -85,6 +91,7 @@ Flight dynamics is the science of air vehicle orientation and control in three d
 3.Gyroscope measures the angular velocity along the three axes. So it is not directly able to predict roll, pitch or yaw. But as we can see integrating angular velocity over time gives us the angle, which can be used to measure the change in roll, pitch and yaw.
 
 ### Block Diagram:
+
 <img height="600" width="300" src="https://raw.githubusercontent.com/nilakshi104/Visualizing-3D-motion-of-imu/master/3D_MOTION_9250IMU/export.png">
 
 ### PROCEDURE
